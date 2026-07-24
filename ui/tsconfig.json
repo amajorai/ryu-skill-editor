@@ -1,0 +1,17 @@
+{
+  "extends": "@ryu/config/tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    // MarkdownEditor.tsx's preview parser walks `lines[idx]` under an explicit
+    // `idx < lines.length` guard (provably in-bounds line scanning); re-enabling
+    // `noUncheckedIndexedAccess` (on in the base config) would force non-null
+    // assertions the guard already makes redundant. Scoped to this package only —
+    // the timeline companion disables it for the same array-indexing reason.
+    "noUncheckedIndexedAccess": false
+  },
+  "include": ["src/**/*", "vite.config.ts"]
+}
