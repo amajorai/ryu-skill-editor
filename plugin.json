@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ryu.skill-editor",
+  "version": "0.1.14",
+  "description": "Author a user-owned Agent Skill (SKILL.md): front-matter fields (name / description / allowed tools / always-on), a markdown body editor, debounced autosave, and server-backed undoable version history.",
+  "author": {
+    "name": "Ryu",
+    "url": "https://ryuhq.com"
+  },
+  "homepage": "https://github.com/amajorai/ryu-skill-editor",
+  "repository": "https://github.com/amajorai/ryu-skill-editor",
+  "keywords": [
+    "skills",
+    "authoring",
+    "editor",
+    "developer"
+  ],
+  "extensions": {
+    "com.ryuhq.ryu": {
+      "id": "@ryu/skill-editor",
+      "displayName": "Skill Editor"
+    }
+  }
+}
