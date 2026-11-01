@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "package": "skill-editor",
+  "scope": "complete",
+  "expectedRows": 26,
+  "selector": {
+    "spec": "e2e/skill-editor-companion.spec.ts",
+    "config": "e2e/skill-editor-companion.playwright.config.ts"
+  },
+  "evidenceBoundary": "A browser renders the current SkillEditor and MarkdownEditor components against a deterministic in-memory window.ryu.skills fixture. Tests prove form state, toolbar output, save/retry/readback, snapshot/diff/restore calls, and visible failure recovery. The host-only Use with agents flow is covered only through its bridge request; actual Core Git history, filesystem writes, agent target selection/distribution, live model/provider effects, and branch/delete operations are not exercised. The current VersionHistory UI exposes Diff and Restore but has no branch or delete controls.",
+  "assertions": [
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "85",
+        "component": "renderInline",
+        "tag": "a",
+        "events": ""
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "The preview renders an HTTPS link and leaves the unsafe JavaScript link as literal Markdown.",
+      "assertionMarker": "javascript:alert(1)"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "350",
+        "component": "MarkdownEditor",
+        "tag": "Textarea",
+        "events": "onChange"
+      },
+      "testTitle": "creates a skill from the front-matter form and enters the saved editor",
+      "assertionName": "The edited Markdown body reaches create and is read back from the bridge fixture.",
+      "assertionMarker": "# Review evidence"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "375",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Bold wraps only the selected text and keeps the body value controlled.",
+      "assertionMarker": "Bold"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "380",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Italic wraps only the selected text and keeps the body value controlled.",
+      "assertionMarker": "Italic"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "385",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Inline code wraps only the selected text.",
+      "assertionMarker": "Inline code"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "390",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Link inserts the selected label and an HTTPS destination.",
+      "assertionMarker": "Link"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "404",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Heading 1 prefixes the selected source line.",
+      "assertionMarker": "Heading 1"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "409",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Heading 2 prefixes the selected source line.",
+      "assertionMarker": "Heading 2"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "414",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Quote prefixes the selected source line.",
+      "assertionMarker": "Quote"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "419",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Bulleted list prefixes the selected source line.",
+      "assertionMarker": "Bulleted list"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "424",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Numbered list prefixes the selected source line.",
+      "assertionMarker": "Numbered list"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "429",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Code block wraps the selected text in Markdown fences.",
+      "assertionMarker": "Code block"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "443",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Write remains the active mode until the user selects Preview.",
+      "assertionMarker": "Write"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "449",
+        "component": "MarkdownEditor",
+        "tag": "MarkdownActionButton",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "Preview becomes active and switches back to Write after inspection.",
+      "assertionMarker": "Preview"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/MarkdownEditor.tsx",
+        "line": "474",
+        "component": "MarkdownActionButton",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "formats selected Markdown with pointer tools and previews only safe web links",
+      "assertionName": "The shared toolbar buttons expose and update their pressed state.",
+      "assertionMarker": "aria-pressed"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "403",
+        "component": "SkillEditor",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "retries the initial source read after a temporary load failure",
+      "assertionName": "Try again performs a second source read and restores the editor.",
+      "assertionMarker": "Try again"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "432",
+        "component": "SkillEditor",
+        "tag": "Input",
+        "events": "onChange"
+      },
+      "testTitle": "creates a skill from the front-matter form and enters the saved editor",
+      "assertionName": "The Skill name field sends the entered name as part of the persisted draft.",
+      "assertionMarker": "A strict skill"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "440",
+        "component": "SkillEditor",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "creates a skill from the front-matter form and enters the saved editor",
+      "assertionName": "Create persists normalized tools, description, always-on state, and the body.",
+      "assertionMarker": "createCalls"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "456",
+        "component": "SkillEditor",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "retries a failed restore and forwards agent use only to its host capability",
+      "assertionName": "Use with agents retries its host capability request after a transient error.",
+      "assertionMarker": "distributeCalls",
+      "coverageStatus": "partial",
+      "partialReason": "Only the skills:crud bridge request is verified here; real host agent selection and distribution are outside this deterministic local browser fixture."
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "473",
+        "component": "SkillEditor",
+        "tag": "Input",
+        "events": "onChange"
+      },
+      "testTitle": "debounces front-matter and Markdown edits, retries a failed write, and reads back saved state",
+      "assertionName": "Description edits are included in the successful autosave readback.",
+      "assertionMarker": "Be explicit about evidence quality"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "482",
+        "component": "SkillEditor",
+        "tag": "Input",
+        "events": "onChange"
+      },
+      "testTitle": "debounces front-matter and Markdown edits, retries a failed write, and reads back saved state",
+      "assertionName": "Allowed tools split comma and newline input into a trimmed list.",
+      "assertionMarker": "[\"Read\", \"Edit\", \"Bash\"]"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/SkillEditor.tsx",
+        "line": "490",
+        "component": "SkillEditor",
+        "tag": "Switch",
+        "events": "onCheckedChange"
+      },
+      "testTitle": "debounces front-matter and Markdown edits, retries a failed write, and reads back saved state",
+      "assertionName": "Always-on switch state is included in the persisted skill source.",
+      "assertionMarker": "alwaysOn"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/VersionHistory.tsx",
+        "line": "189",
+        "component": "VersionHistory",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "captures the latest draft, shows a meaningful diff, and restores a saved version",
+      "assertionName": "Save version flushes the current draft before the snapshot request.",
+      "assertionMarker": "calls.snapshot"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/VersionHistory.tsx",
+        "line": "199",
+        "component": "VersionHistory",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "captures the latest draft, shows a meaningful diff, and restores a saved version",
+      "assertionName": "History opens with saved versions returned by the bridge.",
+      "assertionMarker": "History"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/VersionHistory.tsx",
+        "line": "239",
+        "component": "VersionHistory",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "captures the latest draft, shows a meaningful diff, and restores a saved version",
+      "assertionName": "Diff shows deleted and added lines from the captured version.",
+      "assertionMarker": "- # Snapshotted body"
+    },
+    {
+      "row": {
+        "package": "skill-editor",
+        "source_file": "apps-store/skill-editor/ui/src/VersionHistory.tsx",
+        "line": "247",
+        "component": "VersionHistory",
+        "tag": "Button",
+        "events": "onClick"
+      },
+      "testTitle": "captures the latest draft, shows a meaningful diff, and restores a saved version",
+      "assertionName": "Restore sends the selected version id and reads back restored content.",
+      "assertionMarker": "version-snapshot-2"
+    }
+  ]
+}
